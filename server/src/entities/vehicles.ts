@@ -1,4 +1,4 @@
-export default class Vehicles {
+export default class Vehicle {
   public id?: number;
 
   public veiculo: string;
@@ -11,7 +11,7 @@ export default class Vehicles {
 
   public created: Date;
 
-  constructor(props: Vehicles) {
+  constructor(props: Vehicle) {
     Object.assign(this, props);
   }
 }
