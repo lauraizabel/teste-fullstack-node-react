@@ -3,9 +3,9 @@ import { IVehicleRepository } from "../../repositories/IVehicleRepository";
 export default class GetOneVehicleUseCase {
   constructor(private vehicleRepository: IVehicleRepository) {}
 
-  execute = async (id: number): Promise<any> => {
-    const vehicle = await this.vehicleRepository.findById(id);
+  execute = async (name: string): Promise<any> => {
+    const vehicles = await this.vehicleRepository.findByName(name);
 
-    return vehicle;
+    return vehicles;
   };
 }
