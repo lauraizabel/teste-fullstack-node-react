@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import routes from "./routes";
+import { createConnection } from "typeorm";
+import config from "./config/db";
 
 const app = express();
 
@@ -26,6 +28,12 @@ app.use(routes);
 
 const port = process.env.PORT || 3001;
 
-app.listen(port, () => {
-  console.log(`App listening at port ${port}.`);
-});
+app.listen(port);
+
+createConnection(config)
+  .then((_connection) => {
+    console.log("Server is running on port", port);
+  })
+  .catch((err) => {
+    console.log("Unable to connect to db", err);
+  });
