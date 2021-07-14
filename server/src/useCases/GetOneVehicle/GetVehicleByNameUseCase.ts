@@ -1,6 +1,6 @@
 import { IVehicleRepository } from "../../repositories/IVehicleRepository";
 
-export default class GetOneVehicleUseCase {
+export default class GetVehicleByNameUseCase {
   constructor(private vehicleRepository: IVehicleRepository) {}
 
   execute = async (name: string): Promise<any> => {

@@ -1,13 +1,13 @@
 import VehicleRepository from "../../repositories/implementations/VehicleRepository";
-import GetOneVehicleController from "./GetOneVehicleController";
-import GetOneVehicleUseCase from "./GetOneVehicleUseCase";
+import GetVehicleByNameController from "./GetVehicleByNameController";
+import GetVehicleByNameUseCase from "./GetVehicleByNameUseCase";
 
 const vehicleRepository = new VehicleRepository();
 
-const getOneVehicleUseCase = new GetOneVehicleUseCase(vehicleRepository);
+const getVehicleByNameUseCase = new GetVehicleByNameUseCase(vehicleRepository);
 
-const getOneVehicleController = new GetOneVehicleController(
-  getOneVehicleUseCase
+const getVehicleByNameController = new GetVehicleByNameController(
+  getVehicleByNameUseCase
 );
 
-export default getOneVehicleController;
+export default getVehicleByNameController;
