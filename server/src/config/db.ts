@@ -10,6 +10,7 @@ const config: ConnectionOptions = {
   entities: ["src/entities/**/*.ts"],
   migrations: ["src/migration/**/*.ts"],
   synchronize: true,
+  name: "default",
 };
 
 export default config;

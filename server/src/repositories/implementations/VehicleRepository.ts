@@ -1,24 +1,23 @@
 import { getRepository } from "typeorm";
-import { VehicleModel } from "../models/vehicleModel";
+import { Vehicle } from "../../entities/vehicle";
 import { IVehicleRepository } from "../IVehicleRepository";
-import Vehicle from "../../entities/vehicles";
-
-const vehicleRepository = getRepository(VehicleModel);
+import VehicleModel from "../models/vehicles";
 
 export default class VehicleRepository implements IVehicleRepository {
   async getAll() {
-    const vehicles = vehicleRepository.find();
+    const vehicles = await getRepository(Vehicle).find();
     return vehicles;
   }
 
   async findById(id: number) {
-    const vehicle = await vehicleRepository.findOne({ id });
+    const vehicle = await getRepository(Vehicle).findOne({ id });
     if (!vehicle) return null;
     return vehicle;
   }
 
-  async save(data: Vehicle) {
-    const newVehicle = await vehicleRepository.save({ ...data });
+  async save(data: VehicleModel) {
+    const newVehicle = await getRepository(Vehicle).save(data);
+
     return newVehicle;
   }
 }

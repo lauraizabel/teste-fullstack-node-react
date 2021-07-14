@@ -26,14 +26,15 @@ app.use((req, res, next) => {
 
 app.use(routes);
 
-const port = process.env.PORT || 3001;
-
-app.listen(port);
+const PORT = process.env.PORT || 3001;
 
 createConnection(config)
   .then((_connection) => {
-    console.log("Server is running on port", port);
+    app.listen(PORT, () => {
+      console.log("Server is running on port", PORT);
+    });
   })
   .catch((err) => {
     console.log("Unable to connect to db", err);
+    process.exit(1);
   });
