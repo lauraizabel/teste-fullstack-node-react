@@ -1,5 +1,5 @@
 export default class Vehicles {
-  public _id?: string;
+  public id?: number;
 
   public veiculo: string;
 
