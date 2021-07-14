@@ -1,4 +1,4 @@
-import { getRepository } from "typeorm";
+import { getRepository, Like } from "typeorm";
 import { Vehicle } from "../../entities/vehicle";
 import { IVehicleRepository } from "../IVehicleRepository";
 import VehicleModel from "../models/vehicleModel";
@@ -9,9 +9,13 @@ export default class VehicleRepository implements IVehicleRepository {
     return vehicles;
   }
 
-  async findById(id: number) {
-    const vehicle = await getRepository(Vehicle).findOne({ id });
+  async findByName(name: string) {
+    const vehicle = await getRepository(Vehicle).find({
+      veiculo: Like(`%${name}%`),
+    });
+
     if (!vehicle) return null;
+
     return vehicle;
   }
 
