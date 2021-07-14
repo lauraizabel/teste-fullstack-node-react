@@ -1,6 +1,6 @@
 import VehicleRepository from "../../repositories/implementations/VehicleRepository";
 import CreateVehicleController from "./CreateVehicleController";
-import CreateVehicleUseCase from "./CreateVehiclesUseCase";
+import CreateVehicleUseCase from "./CreateVehicleUseCase";
 
 const vehicleRepository = new VehicleRepository();
 

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import CreateVehicleUseCase from "./CreateVehiclesUseCase";
+import CreateVehicleUseCase from "./CreateVehicleUseCase";
 
 export default class CreateVehicleController {
   constructor(private createVehicleUseCase: CreateVehicleUseCase) {}
