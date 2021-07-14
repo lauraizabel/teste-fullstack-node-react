@@ -1,4 +1,4 @@
-import VehicleModel from "./models/vehicles";
+import VehicleModel from "./models/vehicleModel";
 
 export interface IVehicleRepository {
   findById(id: number): Promise<VehicleModel>;

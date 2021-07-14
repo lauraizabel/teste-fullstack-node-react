@@ -1,7 +1,7 @@
 import { getRepository } from "typeorm";
 import { Vehicle } from "../../entities/vehicle";
 import { IVehicleRepository } from "../IVehicleRepository";
-import VehicleModel from "../models/vehicles";
+import VehicleModel from "../models/vehicleModel";
 
 export default class VehicleRepository implements IVehicleRepository {
   async getAll() {
