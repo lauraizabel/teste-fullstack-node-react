@@ -1,7 +1,7 @@
 import { Router } from "express";
 import createVehicleController from "./useCases/CreateVehicle";
 import getAllVehiclesController from "./useCases/GetAllVehicles";
-import getVehicleByNameController from "./useCases/GetOneVehicle";
+import getVehicleByNameController from "./useCases/GetVehicleByName";
 
 const router = Router();
 
