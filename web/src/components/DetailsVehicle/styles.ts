@@ -9,7 +9,7 @@ export const WrapperDetails = styled.div`
   background-color: #fff;
   height: 90%;
   padding: 12px;
-
+  position: relative;
   h1 {
     color: #4c8d74;
   }
@@ -36,4 +36,15 @@ export const ContainerDetails = styled.div`
   line-height: 28px;
 `;
 
-export const ContainerActions = styled.div``;
+export const ContainerActions = styled.div`
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid black;
+  padding-top: 16px;
+  position: absolute;
+  width: 95%;
+  bottom: 22px;
+  svg {
+    cursor: pointer;
+  }
+`;

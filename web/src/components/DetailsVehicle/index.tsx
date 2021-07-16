@@ -1,4 +1,5 @@
 import React from 'react';
+import ButtonEdit from '../ButtonEdit';
 
 import {
   Container,
@@ -7,6 +8,7 @@ import {
   ContainerDetails,
   ContainerActions,
 } from './styles';
+import { ReactComponent as SoldIcon } from '../../assets/sold-icon.svg';
 
 const DetailsVehicle: React.FC = () => (
   <Container>
@@ -34,8 +36,11 @@ const DetailsVehicle: React.FC = () => (
         e robusta e, ao contrário do Punto, daria origem uma grande família de
         produtos.
       </ContainerDetails>
+      <ContainerActions>
+        <ButtonEdit />
+        <SoldIcon fill="#354046" width={24} />
+      </ContainerActions>
     </WrapperDetails>
-    <ContainerActions />
   </Container>
 );
 
