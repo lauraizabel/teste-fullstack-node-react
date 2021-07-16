@@ -1,0 +1,248 @@
+[
+  {
+    "veiculo": "Integra GS 1.8",
+    "marca": "Acura",
+    "cod_fipe": "038003-2",
+    "vendido": false
+  },
+  {
+    "veiculo": "Legend 3.2/3.5",
+    "marca": "Acura",
+    "cod_fipe": "038002-4",
+    "vendido": false
+  },
+  {
+    "veiculo": "NSX 3.0",
+    "marca": "Acura",
+    "cod_fipe": "038001-6",
+    "vendido": false
+  },
+  {
+    "veiculo": "MARRUÁ 2.8 12V 132cv TDI Diesel",
+    "marca": "Agrale",
+    "cod_fipe": "060001-6",
+    "vendido": false
+  },
+  {
+    "veiculo": "MARRUÁ AM 100 2.8  CS TDI Diesel",
+    "marca": "Agrale",
+    "cod_fipe": "060003-2",
+    "vendido": false
+  },
+  {
+    "veiculo": "MARRUÁ AM 100 2.8 CD TDI Diesel",
+    "marca": "Agrale",
+    "cod_fipe": "060004-0",
+    "vendido": false
+  },
+  {
+    "veiculo": "MARRUÁ AM 150 2.8  CS TDI Diesel",
+    "marca": "Agrale",
+    "cod_fipe": "060005-9",
+    "vendido": false
+  },
+  {
+    "veiculo": "MARRUÁ AM 150 2.8 CD TDI Diesel",
+    "marca": "Agrale",
+    "cod_fipe": "060006-7",
+    "vendido": false
+  },
+  {
+    "veiculo": "MARRUÁ AM 200 2.8  CD TDI Diesel",
+    "marca": "Agrale",
+    "cod_fipe": "060008-3",
+    "vendido": false
+  },
+  {
+    "veiculo": "MARRUÁ AM 200 2.8 CS TDI Diesel",
+    "marca": "Agrale",
+    "cod_fipe": "060007-5",
+    "vendido": false
+  },
+  {
+    "veiculo": "MARRUÁ AM 50 2.8 140CV TDI Diesel",
+    "marca": "Agrale",
+    "cod_fipe": "060002-4",
+    "vendido": false
+  },
+  {
+    "veiculo": "145 Elegant 1.7/1.8 16V",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006009-7",
+    "vendido": false
+  },
+  {
+    "veiculo": "145 Elegant 2.0 16V",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006001-1",
+    "vendido": false
+  },
+  {
+    "veiculo": "145 Quadrifoglio 2.0",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006002-0",
+    "vendido": false
+  },
+  {
+    "veiculo": "145 QV",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006008-9",
+    "vendido": false
+  },
+  {
+    "veiculo": "147 2.0 16V 148cv 4p Semi-Aut.",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006017-8",
+    "vendido": false
+  },
+  {
+    "veiculo": "155",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006003-8",
+    "vendido": false
+  },
+  {
+    "veiculo": "155 Super",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006004-6",
+    "vendido": false
+  },
+  {
+    "veiculo": "156 2.5 V6 24V 190cv 4p Aut.",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006015-1",
+    "vendido": false
+  },
+  {
+    "veiculo": "156 Sport Wagon 2.0 16V",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006014-3",
+    "vendido": false
+  },
+  {
+    "veiculo": "156 SportWagon 2.5 V6 24V 190cv 4p Aut.",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006016-0",
+    "vendido": false
+  },
+  {
+    "veiculo": "156 TS/Sport/Elegant 2.0 16V",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006010-0",
+    "vendido": false
+  },
+  {
+    "veiculo": "164 3.0 V6",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006005-4",
+    "vendido": false
+  },
+  {
+    "veiculo": "164 Super V6 24V",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006006-2",
+    "vendido": false
+  },
+  {
+    "veiculo": "166 3.0 V6 24V",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006011-9",
+    "vendido": false
+  },
+  {
+    "veiculo": "2300 TI/TI-4",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006013-5",
+    "vendido": false
+  },
+  {
+    "veiculo": "Spider 2.0/3.0",
+    "marca": "Alfa Romeo",
+    "cod_fipe": "006007-0",
+    "vendido": false
+  },
+  {
+    "veiculo": "Hummer Hard-Top 6.5 4x4 Diesel TB",
+    "marca": "AM Gen",
+    "cod_fipe": "037001-0",
+    "vendido": false
+  },
+  {
+    "veiculo": "Hummer Open-Top 6.5 4x4 Diesel TB",
+    "marca": "AM Gen",
+    "cod_fipe": "037002-9",
+    "vendido": false
+  },
+  {
+    "veiculo": "Hummer Wagon 6.5 4x4 Diesel TB",
+    "marca": "AM Gen",
+    "cod_fipe": "037003-7",
+    "vendido": false
+  },
+  {
+    "veiculo": "AM-825 Luxo 4.0 Diesel",
+    "marca": "Asia Motors",
+    "cod_fipe": "007018-1",
+    "vendido": false
+  },
+  {
+    "veiculo": "AM-825 Super Luxo 4.0 Diesel",
+    "marca": "Asia Motors",
+    "cod_fipe": "007019-0",
+    "vendido": false
+  },
+  {
+    "veiculo": "Hi-Topic SLX/SDX/DLX Full Diesel",
+    "marca": "Asia Motors",
+    "cod_fipe": "007001-7",
+    "vendido": false
+  },
+  {
+    "veiculo": "Hi-Topic STD Diesel",
+    "marca": "Asia Motors",
+    "cod_fipe": "007002-5",
+    "vendido": false
+  },
+  {
+    "veiculo": "Hi-Topic Van 2.7 Diesel (furgão)",
+    "marca": "Asia Motors",
+    "cod_fipe": "007017-3",
+    "vendido": false
+  },
+  {
+    "veiculo": "Jipe Rocsta GT 4x4 2.2 Diesel",
+    "marca": "Asia Motors",
+    "cod_fipe": "007020-3",
+    "vendido": false
+  },
+  {
+    "veiculo": "Topic Carga 2.7 Diesel (furgão)",
+    "marca": "Asia Motors",
+    "cod_fipe": "007016-5",
+    "vendido": false
+  },
+  {
+    "veiculo": "Topic Luxo Diesel",
+    "marca": "Asia Motors",
+    "cod_fipe": "007014-9",
+    "vendido": false
+  },
+  {
+    "veiculo": "Topic Super Luxo Diesel",
+    "marca": "Asia Motors",
+    "cod_fipe": "007015-7",
+    "vendido": false
+  },
+  {
+    "veiculo": "Towner Coach Full",
+    "marca": "Asia Motors",
+    "cod_fipe": "007003-3",
+    "vendido": false
+  },
+  {
+    "veiculo": "Towner Furgão",
+    "marca": "Asia Motors",
+    "cod_fipe": "007009-2",
+    "vendido": false
+  }
+]
