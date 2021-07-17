@@ -10,29 +10,34 @@ import {
 
 import Mock from '../../api/mock.json';
 import { ReactComponent as SoldIcon } from '../../assets/sold-icon.svg';
+import { VehicleAPI } from '../../@types';
 
-const ListVehicles: React.FC = () => {
-  const data = Mock;
+interface IListVehiclesProps {
+  vehicles: VehicleAPI[];
+  onSelectVehicle: (vehicle: VehicleAPI) => void;
+}
 
-  return (
-    <Container>
-      <h3>Lista de veículos</h3>
-      <ContainerList>
-        {data.map((dt) => (
-          <WrapperVehicle>
-            <DescriptionVehicle>
-              <h1>{dt.marca}</h1>
-              <h3>{dt.veiculo}</h3>
-              <h4>{2016}</h4>
-            </DescriptionVehicle>
-            <SoldVehicle>
-              <SoldIcon fill="#354046" width={24} />
-            </SoldVehicle>
-          </WrapperVehicle>
-        ))}
-      </ContainerList>
-    </Container>
-  );
-};
+const ListVehicles: React.FC<IListVehiclesProps> = ({
+  vehicles,
+  onSelectVehicle,
+}: IListVehiclesProps) => (
+  <Container>
+    <h3>Lista de veículos</h3>
+    <ContainerList>
+      {vehicles.map((vh) => (
+        <WrapperVehicle onClick={() => onSelectVehicle(vh)}>
+          <DescriptionVehicle>
+            <h1>{vh.marca}</h1>
+            <h3>{vh.veiculo}</h3>
+            <h4>{vh.ano}</h4>
+          </DescriptionVehicle>
+          <SoldVehicle>
+            <SoldIcon fill={vh.vendido ? '#354046' : '#189c6c'} width={24} />
+          </SoldVehicle>
+        </WrapperVehicle>
+      ))}
+    </ContainerList>
+  </Container>
+);
 
 export default ListVehicles;

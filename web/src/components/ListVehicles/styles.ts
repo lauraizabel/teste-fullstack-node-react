@@ -47,4 +47,9 @@ export const WrapperVehicle = styled.div`
   margin-bottom: 18px;
   justify-content: space-between;
   padding: 12px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f1f2f0;
+    transition: 0.2s;
+  }
 `;

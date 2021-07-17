@@ -34,6 +34,7 @@ export const ContainerDetails = styled.div`
   padding-bottom: 12px;
   font-weight: 400;
   line-height: 28px;
+  white-space: pre-line;
 `;
 
 export const ContainerActions = styled.div`

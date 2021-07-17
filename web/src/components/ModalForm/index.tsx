@@ -12,6 +12,7 @@ import {
 import { errorsYup } from '../../helpers/errorsYup';
 import { errorsForm, form } from './ModalForm';
 import { postVehicle } from '../../api/vehicles';
+import { Vehicle } from '../../@types';
 
 interface IModal {
   open: boolean;
@@ -19,19 +20,12 @@ interface IModal {
 }
 
 yup.setLocale(errorsYup);
-interface IForm {
-  vehicle: string;
-  year: string;
-  sold: boolean | string;
-  description: string;
-  brand: string;
-}
 
 const ModalForm: React.FC<IModal> = ({ open, handleClose }: IModal) => {
-  const [formState, setFormState] = useState<IForm>({
+  const [formState, setFormState] = useState<Vehicle>({
     ...form,
   });
-  const [errors, setErrors] = useState<IForm>({ ...errorsForm });
+  const [errors, setErrors] = useState<Vehicle>({ ...errorsForm });
 
   const handleChangeForm = (field: string, event: React.ChangeEvent<any>) => {
     setFormState({ ...formState, [field]: event.target.value });
@@ -67,6 +61,7 @@ const ModalForm: React.FC<IModal> = ({ open, handleClose }: IModal) => {
 
       await formSchema.validate(formState);
       await postVehicle(formState);
+      handleClose();
     } catch (err) {
       if (err.path) {
         setErrors({ ...errorsForm, [err.path]: err.errors });
