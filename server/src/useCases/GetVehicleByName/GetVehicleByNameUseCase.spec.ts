@@ -21,13 +21,15 @@ describe("Get All Vehicles", () => {
       description: "Car Test Description",
       vehicle: "Car Test",
       sold: false,
+      brand: "BMW",
     };
 
     await createVehicleUseCase.execute(
       vehicle.year,
       vehicle.description,
       vehicle.vehicle,
-      vehicle.sold
+      vehicle.sold,
+      vehicle.brand
     );
 
     const listVehicleWithName = await getVehicleByNameUseCase.execute(

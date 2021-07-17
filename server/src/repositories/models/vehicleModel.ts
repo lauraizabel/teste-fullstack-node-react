@@ -9,6 +9,8 @@ export default class VehicleModel {
 
   public vendido: boolean;
 
+  public marca: string;
+
   public created?: Date;
 
   constructor(props: VehicleModel) {

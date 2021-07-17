@@ -6,10 +6,16 @@ export default class CreateVehicleController {
 
   handle = async (req: Request, res: Response): Promise<Response> => {
     const { body } = req;
-    const { year, description, vehicle, sold } = body;
+    const { year, description, vehicle, sold, brand } = body;
 
     try {
-      await this.createVehicleUseCase.execute(year, description, vehicle, sold);
+      await this.createVehicleUseCase.execute(
+        year,
+        description,
+        vehicle,
+        sold,
+        brand
+      );
       return res.sendStatus(201);
     } catch (err) {
       return res.status(400).json({

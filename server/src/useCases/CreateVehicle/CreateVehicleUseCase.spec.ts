@@ -16,13 +16,15 @@ describe("Create Vehicle", () => {
       description: "Car Test Description",
       vehicle: "Car Test",
       sold: false,
+      brand: "BMW",
     };
 
     await createVehicleUseCase.execute(
       vehicle.year,
       vehicle.description,
       vehicle.vehicle,
-      vehicle.sold
+      vehicle.sold,
+      vehicle.brand
     );
 
     const vehicleCreated = await vehicleRepositoryInMemory.findByName(
@@ -33,5 +35,6 @@ describe("Create Vehicle", () => {
     expect(vehicleCreated[0].descricao).toEqual(vehicle.description);
     expect(vehicleCreated[0].veiculo).toEqual(vehicle.vehicle);
     expect(vehicleCreated[0].vendido).toEqual(vehicle.sold);
+    expect(vehicleCreated[0].marca).toEqual(vehicle.brand);
   });
 });

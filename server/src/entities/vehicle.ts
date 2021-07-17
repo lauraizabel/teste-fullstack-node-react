@@ -19,10 +19,11 @@ export class Vehicle {
   @Column()
   ano: number;
 
-  @Column({
-    default: false,
-  })
+  @Column()
   vendido: boolean;
+
+  @Column()
+  marca: string;
 
   @CreateDateColumn()
   created: Date;

@@ -21,13 +21,15 @@ describe("Get All Vehicles", () => {
       description: "Car Test Description",
       vehicle: "Car Test",
       sold: false,
+      brand: "Car",
     };
 
     await createVehicleUseCase.execute(
       vehicle.year,
       vehicle.description,
       vehicle.vehicle,
-      vehicle.sold
+      vehicle.sold,
+      vehicle.brand
     );
 
     const vehicles = await getAllVehiclesUseCase.execute();
@@ -38,14 +40,16 @@ describe("Get All Vehicles", () => {
       vehicle.year,
       vehicle.description,
       vehicle.vehicle,
-      vehicle.sold
+      vehicle.sold,
+      vehicle.brand
     );
 
     await createVehicleUseCase.execute(
       vehicle.year,
       vehicle.description,
       vehicle.vehicle,
-      vehicle.sold
+      vehicle.sold,
+      vehicle.brand
     );
 
     expect(vehicles.length).toEqual(3);

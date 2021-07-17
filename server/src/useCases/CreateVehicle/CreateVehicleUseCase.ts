@@ -8,13 +8,15 @@ export default class CreateVehicleUseCase {
     year: number,
     description: string,
     vehicle: string,
-    sold: boolean
+    sold: boolean,
+    brand: string
   ): Promise<any> => {
     const newVehicle = new Vehicle({
       ano: year,
       descricao: description,
       vendido: sold,
       veiculo: vehicle,
+      marca: brand,
     });
 
     await this.vehicleRepository.save(newVehicle);
