@@ -8,7 +8,6 @@ import {
   DescriptionVehicle,
 } from './styles';
 
-import Mock from '../../api/mock.json';
 import { ReactComponent as SoldIcon } from '../../assets/sold-icon.svg';
 import { VehicleAPI } from '../../@types';
 

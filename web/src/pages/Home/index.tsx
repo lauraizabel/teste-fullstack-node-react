@@ -23,6 +23,7 @@ const Home: React.FC = () => {
       const { data } = await fetchVehicles();
       setVehicles(data.allVehicles);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
     }
   };
