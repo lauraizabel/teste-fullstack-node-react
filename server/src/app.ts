@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import routes from "./routes";
+import "dotenv/config";
+
 import { createConnection } from "typeorm";
 import config from "./config/db";
 
