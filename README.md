@@ -1,43 +1,32 @@
-# Teste fullstack
+# Como rodar o projeto
 
-Leia primeiro todo o projeto, faça sua estimativa de horas para o desenvolvimento e envie um email com o título `[Teste Fullstack] Estimativa` para rh@4.events
+Primeiro de tudo, será necessário ter o MySQL instalado juntamente com o Node.js.
 
-Forke este projeto, faça o desenvolvimento e quando finalizar faça um PR aqui. Envie um email com o título `[Teste Fullstack] Finalizado` para rh@4.events com o link do seu PR.
+## Backend
 
-Se você não sabe o que é fazer um "Forke" ou um "PR", pesquise. Valorizamos muito a proatividade.
+Para rodar o projeto da missão backend, basta seguir os passos abaixo:
 
-**Lembre-se: atualize este README informando como instalar e executar seu projeto.**
+1.  Primeiro, crie um arquivo .env na pasta `server` com a seguinte estrutura, basta substituir por suas credenciais:
 
-## Missão backend
+    MYSQL_HOST=SEU_HOST
+    MYSQL_PORT=SUA_PORTA
+    MYSQL_USER=SEU_USER
+    MYSQL_PASSWORD=SUA_SENHA
+    MYSQL_DB=NOME_DO_BD
 
-Desenvolver uma **API JSON RESTful** em **Node**, que utilize os métodos `GET` e `POST`.
+2.  Depois, abra seu terminal e digite `npm install`, ou, caso tenha o _yarn_ instalado, `yarn`
+3.  Logo após ter terminado de instalar todas as dependências e com o .env previamente preenchido com as credenciais, basta abrir novamente o terminal e rodar o comando `npm run dev` ou `yarn dev`
 
-Faça o teste unitário da **API** (Bônus :star:)
-### Especificação
-
-Monte uma base de veículo com a seguinte estrutura:
-
-```
-veiculo:   string
-ano:       integer
-descricao: text
-vendido:   bool
-created:   datetime
-```
-
-Utilize **MongoDB** ou **MySQL** para armazenar os dados que a **API** irá consumir.
-
-### API endpoints
-
+**Algumas rotas criadas foram:**
 `GET /veiculos`
 
 Retorna todos os veículos
 
 ---
 
-`GET /veiculos/find`
+`GET /veiculos/find?name=`
 
-Retorna os veículos de acordo com o termo passado parâmetro `q`
+Retorna os veículos de acordo com o nome previamente passado.
 
 ---
 
@@ -45,28 +34,19 @@ Retorna os veículos de acordo com o termo passado parâmetro `q`
 
 Adiciona um novo veículo
 
+---
 
-## Missão frontend
+`PUT /veiculo/:id`
 
-Desenvolver uma **UI (User Interface)** de acordo com o desenho que está na pasta [layout]
+Edita um veículo
 
-### Especificação
+## Front End
 
-- Cross browser support (IE11+)
-- Consumir **API** criada acima
-- Criar uma tela que tenha...
-    - Listagem de veículos
-    - Busca
-    - Formulário de novo veículo
+Para rodar o projeto da missão front end, basta seguir os passos abaixo:
 
-### Dica
+1. Primeiro, crie um arquivo .env na pasta `web` com a seguinte estrutura, basta substituir por suas credenciais:
 
-Utilize algum framework para auxiliar no desenvolvimento da interface, por exemplo:
+   REACT_APP_API=URL_DA_API
 
-- https://getmdl.io/
-- http://getbootstrap.com/css/
-- http://foundation.zurb.com/
-
-## Dúvida
-
-Se tiver qualquer dúvida sobre esse teste, envie um email com o título `[Teste Fullstack] O assunto que vc deseja` para rh@4.events
+2. Depois, abra seu terminal e digite `npm install`, ou, caso tenha o _yarn_ instalado, `yarn`
+3. Logo após ter terminado de instalar todas as dependências e com o .env previamente preenchido com as credenciais, basta abrir novamente o terminal e rodar o comando `npm run start` ou `yarn start`.
