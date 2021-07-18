@@ -18,6 +18,8 @@ Para rodar o projeto da missão backend, basta seguir os passos abaixo:
 3.  Logo após ter terminado de instalar todas as dependências e com o .env previamente preenchido com as credenciais, basta abrir novamente o terminal e rodar o comando `npm run dev` ou `yarn dev`
 
 **Algumas rotas criadas foram:**
+
+
 `GET /veiculos`
 
 Retorna todos os veículos
