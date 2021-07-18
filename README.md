@@ -1,12 +1,12 @@
 # Como rodar o projeto
 
-Primeiro de tudo, será necessário ter o MySQL instalado juntamente com o Node.js.
+Primeiro de tudo, como o banco escolhido para o desafio foi o MYSQL, será necessário ter ele instalado juntamente com o Node.js.
 
 ## Backend
 
 Para rodar o projeto da missão backend, basta seguir os passos abaixo:
 
-1.  Primeiro, crie um arquivo .env na pasta `server` com a seguinte estrutura, basta substituir por suas credenciais:
+1.  Primeiro, crie um arquivo .env na pasta `server`, com a seguinte estrutura, basta substituir por suas credenciais:
 
     MYSQL_HOST=SEU_HOST
     MYSQL_PORT=SUA_PORTA
@@ -44,7 +44,7 @@ Edita um veículo
 
 Para rodar o projeto da missão front end, basta seguir os passos abaixo:
 
-1. Primeiro, crie um arquivo .env na pasta `web` com a seguinte estrutura, basta substituir por suas credenciais:
+1. Primeiro, crie um arquivo .env na pasta `web`, com a seguinte estrutura, basta substituir por suas credenciais:
 
    REACT_APP_API=URL_DA_API
 
