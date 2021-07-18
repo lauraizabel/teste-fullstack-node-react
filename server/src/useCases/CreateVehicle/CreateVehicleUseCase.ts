@@ -11,6 +11,10 @@ export default class CreateVehicleUseCase {
     sold: boolean,
     brand: string
   ): Promise<any> => {
+    if (year < 1888 || year > new Date().getFullYear() + 1) {
+      throw new Error("Ano inválido.");
+    }
+
     const newVehicle = new Vehicle({
       ano: year,
       descricao: description,

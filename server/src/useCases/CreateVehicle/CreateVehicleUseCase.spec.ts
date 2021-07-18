@@ -37,4 +37,24 @@ describe("Create Vehicle", () => {
     expect(vehicleCreated[0].vendido).toEqual(vehicle.sold);
     expect(vehicleCreated[0].marca).toEqual(vehicle.brand);
   });
+
+  it("should be inable to create a new vehicle because year is invalid", async () => {
+    const vehicle = {
+      year: 1500,
+      description: "Car Test Description",
+      vehicle: "Car Test",
+      sold: false,
+      brand: "BMW",
+    };
+
+    await expect(async () => {
+      await createVehicleUseCase.execute(
+        vehicle.year,
+        vehicle.description,
+        vehicle.vehicle,
+        vehicle.sold,
+        vehicle.brand
+      );
+    }).rejects.toThrowError("Ano inválido.");
+  });
 });
