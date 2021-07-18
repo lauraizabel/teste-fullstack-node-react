@@ -1,6 +1,7 @@
 import React from 'react';
-import ButtonEdit from '../ButtonEdit';
+import { FaTag } from 'react-icons/fa';
 
+import ButtonEdit from '../ButtonEdit';
 import {
   Container,
   WrapperDetails,
@@ -8,17 +9,18 @@ import {
   ContainerDetails,
   ContainerActions,
 } from './styles';
-import { ReactComponent as SoldIcon } from '../../assets/sold-icon.svg';
 import { VehicleAPI } from '../../@types';
 
 interface IDetailsVehicleProps {
-  vehicle: VehicleAPI | undefined;
+  vehicle: VehicleAPI;
   handleSetEdit: () => void;
+  clickSold: (id: string, sold: boolean) => void;
 }
 
 const DetailsVehicle: React.FC<IDetailsVehicleProps> = ({
   vehicle,
   handleSetEdit,
+  clickSold,
 }: IDetailsVehicleProps) => (
   <Container>
     <h3>Detalhes</h3>
@@ -37,7 +39,11 @@ const DetailsVehicle: React.FC<IDetailsVehicleProps> = ({
       <ContainerDetails>{vehicle?.descricao}</ContainerDetails>
       <ContainerActions>
         <ButtonEdit onClick={handleSetEdit} />
-        <SoldIcon fill={vehicle?.vendido ? '#354046' : '#189c6c'} width={24} />
+        <FaTag
+          fill={vehicle?.vendido ? '#189c6c' : '#354046'}
+          size={24}
+          onClick={() => clickSold(vehicle?.id.toString(), !vehicle?.vendido)}
+        />
       </ContainerActions>
     </WrapperDetails>
   </Container>

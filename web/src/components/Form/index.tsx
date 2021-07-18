@@ -11,7 +11,7 @@ import {
 } from './styles';
 import { errorsYup } from '../../helpers/errorsYup';
 import { errorsForm, form } from './ModalForm';
-import { postVehicle } from '../../api/vehicles';
+import { postVehicle, updateVehicle } from '../../api/vehicles';
 import { Vehicle, VehicleAPI } from '../../@types';
 
 import Modal from '../Modal';
@@ -19,7 +19,7 @@ import Modal from '../Modal';
 interface IFormProps {
   open: boolean;
   handleClose: () => void;
-  selectedVehicle: VehicleAPI | undefined;
+  selectedVehicle: VehicleAPI;
   isEdit: boolean;
 }
 
@@ -69,7 +69,9 @@ const Form: React.FC<IFormProps> = ({
       });
 
       await formSchema.validate(formState);
-      await postVehicle(formState);
+      if (isEdit)
+        await updateVehicle(selectedVehicle?.id.toString(), formState);
+      else await postVehicle(formState);
       handleClose();
     } catch (err) {
       if (err.path) {
@@ -102,7 +104,7 @@ const Form: React.FC<IFormProps> = ({
   return (
     <Modal open={open} handleClose={onClose}>
       <Container>
-        <h1>Novo Veículo</h1>
+        <h1>{isEdit ? 'Editar' : 'Novo'} Veículo</h1>
         <WrapperForm>
           <TextField
             name="vehicle"

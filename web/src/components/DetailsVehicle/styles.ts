@@ -8,7 +8,7 @@ export const WrapperDetails = styled.div`
   margin-top: 12px;
   background-color: #fff;
   height: 90%;
-  padding: 12px;
+  padding: 12px 12px 40px 12px;
   position: relative;
   h1 {
     color: #4c8d74;

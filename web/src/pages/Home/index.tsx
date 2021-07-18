@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 
 import { VehicleAPI } from '../../@types';
-import { fetchVehicles, fetchVehiclesByName } from '../../api/vehicles';
+import {
+  fetchVehicles,
+  fetchVehiclesByName,
+  updateVehicle,
+} from '../../api/vehicles';
 import ButtonAdd from '../../components/ButtonAdd';
 import DetailsVehicle from '../../components/DetailsVehicle';
 import Layout from '../../components/Layout';
@@ -15,7 +19,9 @@ import { Container, WrapperDescription, WrapperList } from './styles';
 const Home: React.FC = () => {
   const [openForm, setOpenForm] = useState<boolean>(false);
   const [vehicles, setVehicles] = useState<VehicleAPI[]>([]);
-  const [selectedVehicle, setSelectedVehicle] = useState<VehicleAPI>();
+  const [selectedVehicle, setSelectedVehicle] = useState<VehicleAPI>(
+    vehicles[0],
+  );
   const [edit, setEdit] = useState<boolean>(false);
 
   const { search } = useSearchContext();
@@ -27,8 +33,7 @@ const Home: React.FC = () => {
       const { data } = await fetchVehicles();
       setVehicles(data.allVehicles);
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
+      Swal.fire('Ops', 'Algo de errado aconteceu. Tente novamente.', 'error');
     }
   };
 
@@ -45,17 +50,30 @@ const Home: React.FC = () => {
     }
   };
 
-  const handleClose = () => {
-    setOpenForm(false);
-    setEdit(false);
+  const handleRefetch = () => {
     const isSearch = search.length > 0;
     if (isSearch) handleSearch();
     else handleFetchVehicles();
   };
 
+  const handleClose = () => {
+    setOpenForm(false);
+    setEdit(false);
+    handleRefetch();
+  };
+
   const handleInitEdit = () => {
     setEdit(true);
     setOpenForm(true);
+  };
+
+  const handleClickSold = async (id: string, sold: boolean) => {
+    try {
+      await updateVehicle(id, { sold });
+      handleRefetch();
+    } catch (error) {
+      Swal.fire('Ops', 'Algo de errado aconteceu. Tente novamente.', 'error');
+    }
   };
 
   useEffect(() => {
@@ -84,10 +102,12 @@ const Home: React.FC = () => {
             vehicles={vehicles}
             onSelectVehicle={handleSelectVehicle}
             selectedVehicle={selectedVehicle}
+            clickSold={handleClickSold}
           />
           <DetailsVehicle
             vehicle={selectedVehicle}
             handleSetEdit={handleInitEdit}
+            clickSold={handleClickSold}
           />
         </WrapperList>
       </Container>

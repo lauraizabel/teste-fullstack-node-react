@@ -19,6 +19,8 @@ export const SoldVehicle = styled.div`
     cursor: pointer;
   }
   display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const DescriptionVehicle = styled.div`

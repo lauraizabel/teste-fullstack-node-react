@@ -21,15 +21,16 @@ export default class UpdateVehicleUseCase {
     if (!oldVehicle) {
       throw new Error("ID inválido.");
     }
+    const isSold = sold !== undefined ? sold : oldVehicle.vendido;
 
     const updatedVehicle = new Vehicle({
       ano: year || oldVehicle.ano,
       descricao: description || oldVehicle.descricao,
       veiculo: vehicle || oldVehicle.veiculo,
-      vendido: sold || oldVehicle.vendido,
+      vendido: isSold,
       marca: brand || oldVehicle.marca,
     });
 
-    await this.vehicleRepository.update(updatedVehicle, id);
+    await this.vehicleRepository.update({ ...updatedVehicle }, id);
   };
 }

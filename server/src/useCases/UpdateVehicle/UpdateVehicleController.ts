@@ -18,7 +18,7 @@ export default class UpdateVehicleController {
         brand,
         Number(id)
       );
-      return res.sendStatus(201);
+      return res.sendStatus(200);
     } catch (err) {
       return res.status(400).json({
         message: err.message || "Unexpected error.",
