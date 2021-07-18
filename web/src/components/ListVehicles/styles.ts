@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface IWrapperVehicle {
+  isSelected: boolean;
+}
+
 export const Container = styled.div`
   width: 48%;
 `;
@@ -39,10 +43,10 @@ export const DescriptionVehicle = styled.div`
   }
 `;
 
-export const WrapperVehicle = styled.div`
+export const WrapperVehicle = styled.div<IWrapperVehicle>`
   /* width: 100%; */
   height: 100px;
-  background-color: #ffff;
+  background-color: ${({ isSelected }) => (isSelected ? '#f1f2f0' : '#ffff')};
   display: flex;
   margin-bottom: 18px;
   justify-content: space-between;

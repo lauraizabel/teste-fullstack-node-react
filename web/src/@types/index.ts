@@ -12,4 +12,5 @@ export interface VehicleAPI {
   vendido: boolean | string;
   descricao: string;
   marca: string;
+  id: number;
 }

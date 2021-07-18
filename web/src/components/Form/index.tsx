@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
-import { Modal, TextField, Switch, FormControlLabel } from '@material-ui/core';
+import { TextField, Switch, FormControlLabel } from '@material-ui/core';
 
 import {
   Container,
@@ -12,16 +12,25 @@ import {
 import { errorsYup } from '../../helpers/errorsYup';
 import { errorsForm, form } from './ModalForm';
 import { postVehicle } from '../../api/vehicles';
-import { Vehicle } from '../../@types';
+import { Vehicle, VehicleAPI } from '../../@types';
 
-interface IModal {
+import Modal from '../Modal';
+
+interface IFormProps {
   open: boolean;
   handleClose: () => void;
+  selectedVehicle: VehicleAPI | undefined;
+  isEdit: boolean;
 }
 
 yup.setLocale(errorsYup);
 
-const ModalForm: React.FC<IModal> = ({ open, handleClose }: IModal) => {
+const Form: React.FC<IFormProps> = ({
+  open,
+  handleClose,
+  isEdit,
+  selectedVehicle,
+}: IFormProps) => {
   const [formState, setFormState] = useState<Vehicle>({
     ...form,
   });
@@ -74,8 +83,24 @@ const ModalForm: React.FC<IModal> = ({ open, handleClose }: IModal) => {
     handleClose();
   };
 
+  const handleStartInit = () => {
+    const newForm: any = { ...form };
+
+    newForm.brand = selectedVehicle?.marca;
+    newForm.vehicle = selectedVehicle?.veiculo;
+    newForm.sold = selectedVehicle?.vendido;
+    newForm.year = selectedVehicle?.ano;
+    newForm.description = selectedVehicle?.descricao;
+
+    setFormState({ ...newForm });
+  };
+
+  useEffect(() => {
+    if (isEdit) handleStartInit();
+  }, [isEdit]);
+
   return (
-    <Modal open={open} onClose={onClose} disableBackdropClick>
+    <Modal open={open} handleClose={onClose}>
       <Container>
         <h1>Novo Veículo</h1>
         <WrapperForm>
@@ -147,4 +172,4 @@ const ModalForm: React.FC<IModal> = ({ open, handleClose }: IModal) => {
   );
 };
 
-export default ModalForm;
+export default Form;

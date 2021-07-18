@@ -1,12 +1,15 @@
 import React from 'react';
+import { SearchProvider } from './context/searchContext';
 import Home from './pages/Home';
 import { GlobalStyle } from './styles/global';
 
 function App() {
   return (
     <>
-      <Home />
-      <GlobalStyle />
+      <SearchProvider>
+        <Home />
+        <GlobalStyle />
+      </SearchProvider>
     </>
   );
 }

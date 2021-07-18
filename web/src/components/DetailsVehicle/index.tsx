@@ -13,9 +13,12 @@ import { VehicleAPI } from '../../@types';
 
 interface IDetailsVehicleProps {
   vehicle: VehicleAPI | undefined;
+  handleSetEdit: () => void;
 }
+
 const DetailsVehicle: React.FC<IDetailsVehicleProps> = ({
   vehicle,
+  handleSetEdit,
 }: IDetailsVehicleProps) => (
   <Container>
     <h3>Detalhes</h3>
@@ -33,7 +36,7 @@ const DetailsVehicle: React.FC<IDetailsVehicleProps> = ({
       </ContainerSubDetails>
       <ContainerDetails>{vehicle?.descricao}</ContainerDetails>
       <ContainerActions>
-        <ButtonEdit />
+        <ButtonEdit onClick={handleSetEdit} />
         <SoldIcon fill={vehicle?.vendido ? '#354046' : '#189c6c'} width={24} />
       </ContainerActions>
     </WrapperDetails>

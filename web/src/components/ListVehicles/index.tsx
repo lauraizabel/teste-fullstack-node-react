@@ -14,17 +14,22 @@ import { VehicleAPI } from '../../@types';
 interface IListVehiclesProps {
   vehicles: VehicleAPI[];
   onSelectVehicle: (vehicle: VehicleAPI) => void;
+  selectedVehicle: VehicleAPI | undefined;
 }
 
 const ListVehicles: React.FC<IListVehiclesProps> = ({
   vehicles,
   onSelectVehicle,
+  selectedVehicle,
 }: IListVehiclesProps) => (
   <Container>
     <h3>Lista de veículos</h3>
     <ContainerList>
       {vehicles.map((vh) => (
-        <WrapperVehicle onClick={() => onSelectVehicle(vh)}>
+        <WrapperVehicle
+          onClick={() => onSelectVehicle(vh)}
+          isSelected={selectedVehicle?.id === vh.id}
+        >
           <DescriptionVehicle>
             <h1>{vh.marca}</h1>
             <h3>{vh.veiculo}</h3>
