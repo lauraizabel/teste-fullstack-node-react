@@ -19,6 +19,22 @@ export default class VehicleRepository implements IVehicleRepository {
     return vehicle;
   }
 
+  async findById(id: number) {
+    const vehicle = await getRepository(Vehicle).findOne({
+      id,
+    });
+
+    if (!vehicle) return null;
+
+    return vehicle;
+  }
+
+  async update(data: VehicleModel, id: number) {
+    const vehicle = await getRepository(Vehicle).update(id, data);
+
+    return vehicle;
+  }
+
   async save(data: VehicleModel) {
     const newVehicle = await getRepository(Vehicle).save(data);
 

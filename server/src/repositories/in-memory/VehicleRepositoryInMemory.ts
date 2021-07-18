@@ -24,4 +24,19 @@ export default class VehicleRepositoryInMemory implements IVehicleRepository {
     this.vehicles.push(newVehicle);
     return newVehicle;
   }
+
+  async findById(id: number) {
+    const vehicle = this.vehicles.filter((vehicle) => vehicle.id === id);
+
+    if (vehicle.length === 0) return null;
+
+    return vehicle[0];
+  }
+
+  async update(data: VehicleModel, id: number) {
+    const vehicleIndex = this.vehicles.findIndex(
+      (vehicle) => vehicle.id === id
+    );
+    this.vehicles[vehicleIndex] = data;
+  }
 }
